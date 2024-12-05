@@ -1,0 +1,15 @@
+# dice_game.py
+
+import random
+
+def roll_dice():
+    return random.randint(1, 6)
+
+def play_game(players):
+    results = {player: roll_dice() for player in players}
+    winner = max(results, key=results.get)
+    print("Results:", results)
+    print(f"The winner is {winner}!")
+
+# Sample usage
+play_game(["Alice", "Bob", "Charlie"])
